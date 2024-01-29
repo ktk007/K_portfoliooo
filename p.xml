@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataPDU xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="camt060.xsd">
+         <Body>
+         <AppHdr>
+         <Fr>
+        <FIId>
+                <FinInstnId>
+                        <BICFI>AGV</BICFI>
+                    </FinInstnId>
+                </FIId>
+         </Fr>
+         <To>
+         <FIId>
+         <FinInstnId>
+         <BICFI>ReplaceWithBICFIValue</BICFI>
+         </FinInstnId>
+         
+         </FIId>
+         </To>
+         <BizMsgIdr>message</BizMsgIdr>
+         <MsgDefIdr>Messafe2</MsgDefIdr>
+         <BizSvc>valur</BizSvc>
+            <CreDt>Datetime</CreDt>
+            </AppHdr>
+            <Document>
+            <AcctRptgReq>
+            <GrpHdr>
+            <MsgId>some message</MsgId>
+            </GrpHdr>
+            <RptgReq>
+                    <ReqdMsgNmId>ReplaceWithReqdMsgNmIdValue</ReqdMsgNmId>
+                    <Acct>
+                        <Id>
+                        <Othr>
+                                <Id>ReplaceWithIdValue</Id>
+                            </Othr>
+                        </Id>
+                    </Acct>
+                    <AcctOwnr>
+                    <Agt>
+                    <FinInstnId>
+<BICFI>ReplaceWithBICFIValue</BICFI>
+                    </FinInstnId>
+                    </Agt>
+                    </AcctOwnr>
+                    </RptgReq>
+</AcctRptgReq>
+</Document>
+</Body>
+</DataPDU>
+                    
+            
+

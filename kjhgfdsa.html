@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration form</title>
+    <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+    <meta name="description"
+        content="This document is an example of JavaScript Field label form validation using a sample registration form. " />
+    <script>
+        function validateForm() {
+            var userId = document.forms["registrationForm"]["userId"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var name = document.forms["registrationForm"]["name"].value;
+            var country = document.forms["registrationForm"]["country"].value;
+            var zip = document.forms["registrationForm"]["zip"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var language = document.querySelectorAll('input[name="language"]:checked').length;
+
+            if (userId.length < 5 || userId.length > 12) {
+                alert("User ID must be between 5 and 12 characters");
+                return false;
+            }
+
+            if (password.length < 7 || password.length > 12) {
+                alert("Password must be between 7 and 12 characters");
+                return false;
+            }
+
+            if (!/^[a-zA-Z]+$/.test(name)) {
+                alert("Name must contain only alphabets");
+                return false;
+            }
+
+            if (country === "") {
+                alert("Please select a country");
+                return false;
+            }
+
+            if (!/^\d+$/.test(zip)) {
+                alert("Zip code must contain only numbers");
+                return false;
+            }
+
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            if (!gender) {
+                alert("Please select a gender");
+                return false;
+            }
+
+            if (language === 0) {
+                alert("Please select at least one language");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Back1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        .container {
+            text-align: justify;
+        }
+
+        .registration-form {
+            width: 650px;
+            height: 600px;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: rgb(51, 56, 66, 0.8);
+            color: aliceblue
+                /* Adjust the alpha value (0.5 in this case) for transparency */
+        }
+
+        .registration-form label {
+            display: block;
+            /* margin-bottom: 10px;*/
+            font-weight: normal;
+            color: aliceblue;
+        }
+
+
+
+        .radio-group {
+            display: flex;
+            /* Display the radio buttons in a row */
+        }
+
+        .radio-button {
+            margin-right: 10px;
+            /* Add some spacing between the radio buttons */
+        }
+
+        .checkbox-group {
+            display: flex;
+            /* Display the checkboxes in a row */
+        }
+
+        .checkbox {
+            margin-right: 10px;
+            /* Add some spacing between the checkboxes */
+        }
+
+        input[type="submit"] {
+            background-color: #82aedb;
+            /* Blue background color */
+            color: #0f0f0f;
+            /* White text color */
+            padding: 10px 20px;
+            /* Padding around the text */
+            border: none;
+            /* Remove border */
+            cursor: pointer;
+            /* Add a pointer cursor on hover */
+            font-size: 16px;
+            font-weight: bold;
+            /* Increase font size */
+            border-radius: 5px;
+            /* Add some border-radius for rounded corners */
+        }
+
+        /* Change button style on hover */
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body onload="firstfocus();">
+    <div class="container">
+        <div class="registration-form" onsubmit="return validateForm()">
+            <center>
+                <h1 id="h1" style="margin-top: 1px ">Registration Form</h1>
+            </center>
+            <form name="registration">
+                <label for="userId">User ID (5-12 characters):</label>
+                <input type="text" id="userId" name="userId" size="60" required><br><br>
+
+                <label for="password">Password (7-12 characters):</label>
+                <input type="password" id="password" name="password" size="60" required><br><br>
+                <label for="name">Name (only alphabets):</label>
+                <input type="text" id="name" name="name" size="60" required><br><br>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="2" cols="59"></textarea><br><br>
+                <label for="country">Country [Must select a country] :</label>
+                <select name="country">
+                    <option selected="" value="Default">(Please select a country)</option>
+                    <option value="AF">Australia</option>
+                    <option value="AL">Canada</option>
+                    <option value="DZ">India</option>
+                    <option value="AS">Russia</option>
+                    <option value="AD">USA</option>
+                </select><br><br>
+                <label for="zip">Zip Code (only numbers):</label>
+                <input type="text" id="zip" name="zip" size="60" required><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" size="60" required><br><br>
+                <div class="radio-group">
+                    <label id="gender">Gender :</label>
+                    <input type="radio" id="male" name="gender" value="male">Male
+                    <input type="radio" id="female" name="gender" value="female">Female
+                </div><br>
+                <div class="checkbox-group">
+                    <label>Language :</label>
+                    <input type="checkbox" id="english" name="language" value="english">English
+                    <input type="checkbox" id="spanish" name="language" value="spanish">Non English
+
+
+                </div><br><br>
+                <center>
+                    <input type="submit" value="Submit">
+                </center>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,57 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    /* Hide horizontal scrollbar */
+    background-image: url("r3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.car-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.car {
+    position: absolute;
+    left: -100px;
+    /* Initial position off-screen to the left */
+    top: 85%;
+    transform: translateY(-50%);
+    animation: moveRight 4s forwards;
+    /* Adjust the duration as needed */
+}
+
+.helicopter {
+    width: 400px;
+    height: 400px;
+    background-image: url('h2.png');
+    background-size: cover;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flyHelicopter 5s forwards;
+}
+
+@keyframes flyHelicopter {
+    to {
+        top: 55%;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0px;
+        /* Start position */
+    }
+
+    100% {
+        left: calc(100% + 100px);
+        /* Move to the right of the viewport */
+    }
+}

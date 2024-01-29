@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mouse Shadow</title>
+</head>
+
+<body>
+    <div class="hero">
+        <h1 contenteditable>🔥WOAH!</h1>
+    </div>
+
+    <style>
+        html {
+            color: black;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+
+        h1 {
+            text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+            font-size: 100px;
+        }
+    </style>
+
+    <script>
+        //first we'll grab hero
+        const hero = document.querySelector(".hero");
+        // the text inside hero
+        const text = document.querySelector("h1");
+
+        function shadow(e) {
+
+            //first thing we need todo is get the width and height of the thing we have hovered over which is hero
+            const { offsetWidth: width, offsetHeight: height } = hero;
+            //now we will figure out where the persons cursor was
+            let { offsetX: x, offsetY: y } = e;
+
+            if (this != e.target) {
+                x = x + e.target.offsetLeft;
+                y = y + e.target.offsetRight;
+            }
+
+            //if 100 is our walk 50 is as high as we go and -50 is as low as we go
+            const walk = 400;
+            const xwalk = Math.round((x / width) * walk - walk / 2);
+            const ywalk = Math.round((y / width) * walk - walk / 2);
+            // instead of going from 0 to 100 we go from -50 to 50
+            text.style.textShadow = `
+        ${xwalk}px ${ywalk}px 0 rgba(255,0,255,0.7),
+        ${xwalk * -1}px ${ywalk}px 0 rgba(0,255,255,0.7),
+        ${ywalk}px ${xwalk * -1}px 0 rgba(0,255,0,0.7),
+        ${ywalk * -1}px ${xwalk}px 0 rgba(0,0,255,0.7)`;
+        }
+
+        hero.addEventListener("mousemove", shadow);
+    </script>
+</body>
+
+</html>

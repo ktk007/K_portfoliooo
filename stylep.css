@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 96%;
+    margin: 0 auto;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('bg3.png');
+    background-size: cover;
+    opacity: 0.85;
+    /* Adjust the opacity value to control transparency */
+    z-index: -1;
+}
+
+
+header {
+
+    color: #f8f6f6;
+    padding: 150px 0;
+    text-align: left;
+    /* Align header content to the left */
+}
+
+.profile-pic {
+    width: 148px;
+    height: 150px;
+    background-image: url('girl.jpg');
+    /* Replace 'your-image.jpg' with the path to your circular image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 20px 20px 0;
+    /* Adjusted margin to align circular image to the left */
+    float: left;
+    /* Float the circular image to the left */
+}
+
+header h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    /* Added margin-bottom for spacing */
+}
+
+
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: left;
+    /* Align navigation links to the left */
+}
+
+
+header a {
+    display: flex;
+    padding: 10px;
+    color: #fff4f4;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+header a:hover {
+    background-color: #807171;
+}
+
+main {
+    background-color: #b4a8a8;
+    padding: 20px 20px;
+
+    /* Adjusted padding for better left alignment */
+}
+
+#home {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: left;
+    padding: 5px 0;
+    /* Increased padding for the home section */
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.2em;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #333;
+}
+
+.project {
+    background-color: #7c6868;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    /* Align text in the footer to the left */
+    padding: 5px 10px;
+    /* Adjusted padding for better left alignment */
+}

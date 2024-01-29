@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form method="post" action="">
+    <label for="start">Start Number:</label>
+    <input type="number" name="start" required>
+
+    <label for="end">End Number:</label>
+    <input type="number" name="end" required>
+
+    <input type="submit" value="Generate Table">
+  </form>
+
+  <?php
+  // Check if form is submitted
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Get user input
+      $start = (int)$_POST['start'];
+      $end = (int)$_POST['end'];
+
+      // Validate input
+      if ($start > 0 && $end > 0 && $start <= $end) {
+          // Generate periodic table
+          echo '<table>';
+          for ($i = $start; $i <= $end; $i++) {
+              echo '<tr>';
+              for ($j = 1; $j <= 18; $j++) {
+                  echo '<td>' . $i . '-' . $j . '</td>';
+              }
+              echo '</tr>';
+          }
+          echo '</table>';
+      } else {
+          echo 'Invalid input. Please enter positive numbers with the start number less than or equal to the end number.';
+      }
+  }
+  ?>
+
+</body>
+</html>

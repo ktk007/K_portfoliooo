@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Interface</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full-width banner with reduced height */
+        #banner {
+            width: 100%;
+            height: 100px;
+            /* Adjust the height as needed */
+            line-height: 100px;
+            border: 1px solid #030303;
+            /* Add border */
+        }
+
+        /* Navigation with 5 hyperlinks */
+        #navigation {
+            width: 100%;
+            height: 50px;
+            /* Adjust the height as needed */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid #ccc;
+            /* Add border */
+        }
+
+        #navigation a {
+            text-decoration: none;
+        }
+
+        /* Main section with three areas */
+        #mainSection {
+            width: 100%;
+            height: 70vh;
+            /* 70% of the viewport height */
+            display: flex;
+            border: 1px solid #ccc;
+            /* Add border */
+        }
+
+        /* Left area */
+        #leftArea {
+            flex: 1;
+            /* Takes one-third of the width */
+            padding: 20px;
+            border: 1px solid #ccc;
+            /* Add border */
+            text-align: center;
+        }
+
+        /* Central area */
+        #centralArea {
+            flex: 1;
+            /* Takes two-thirds of the width */
+            padding: 20px;
+            border: 1px solid #ccc;
+            /* Add border */
+            text-align: center;
+
+        }
+
+        /* Right area */
+        #rightArea {
+            flex: 1;
+            /* Takes one-third of the width */
+            padding: 20px;
+            border: 1px solid #ccc;
+            /* Add border */
+            text-align: center;
+        }
+
+        /* Footer */
+        #footer {
+            width: 100%;
+            height: 50px;
+            /* Adjust the height as needed */
+            line-height: 50px;
+            position: fixed;
+            bottom: 0;
+            border: 1px solid #ccc;
+            /* Add border */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Banner -->
+    <div id="banner">
+        <h1>Banner for website</h1>
+    </div>
+
+    <!-- Navigation -->
+    <div id="navigation">
+        <a href="#">Hyperlink 1</a>
+        <a href="#">Hyperlink 2</a>
+        <a href="#">Hyperlink 3</a>
+        <a href="#">Hyperlink 4</a>
+        <a href="#">Hyperlink 5</a>
+    </div>
+
+    <!-- Main Section with Three Areas -->
+    <div id="mainSection">
+        <!-- Left Area -->
+        <div id="leftArea">
+            <h2>Left Area</h2>
+        </div>
+
+        <!-- Central Area -->
+        <div id="centralArea">
+            <h2>Central Area</h2>
+        </div>
+
+        <!-- Right Area -->
+        <div id="rightArea">
+            <h2>Right Area</h2>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <p>Footer for website</p>
+    </div>
+
+</body>
+
+</html>

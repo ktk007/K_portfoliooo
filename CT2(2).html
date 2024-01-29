@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Login Form</title>
+</head>
+
+<body>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <button type="button" onclick="validateForm()">Login</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var phone = document.getElementById('phone').value;
+
+            if (!username || !password || !phone) {
+                alert('All fields must be filled out');
+                return;
+            }
+
+            if (/^[_@0-9]/.test(username)) {
+                alert('Username should not start with _, @, or a number');
+                return;
+            }
+
+            if (password.length < 6 || password.length > 12) {
+                alert('Password length must be between 6 and 12 characters');
+                return;
+            }
+
+            if (!/^(017|019|018|015)\d{8}$/.test(phone)) {
+                alert('Invalid phone number. It must start with 017, 019, 018, or 015 and have 11 digits in total');
+                return;
+            }
+
+            alert('Form validated successfully! You can proceed with submission.');
+        }
+    </script>
+</body>
+
+</html>

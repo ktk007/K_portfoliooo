@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Football Match Table</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Match Type</th>
+            <th>Date</th>
+            <th>Participated Country</th>
+            <th>Man of the Match</th>
+        </tr>
+    </table>
+
+    <script>
+        const jsonData = {
+            "Match": [
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "06/07/2021",
+                    "ParticipatedCountries": {
+                        "ParticipatedCountry": [
+                            "Italy",
+                            "Spain"
+                        ],
+                        "results": {
+                            "result": {
+                                "Italy": 1,
+                                "Spain": 1
+                            },
+                            "tiebreaker": {
+                                "Italy": 4,
+                                "Spain": 2
+                            }
+                        }
+                    },
+                    "ManoftheMatch": "Federico Chiesa"
+                },
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "07/07/2021",
+                    "ParticipatedCountries": {
+                        "ParticipatedCountry": [
+                            "England",
+                            "Denmark"
+                        ],
+                        "results": {
+                            "result": {
+                                "England": 2,
+                                "Denmark": 1
+                            }
+                        }
+                    },
+                    "ManoftheMatch": "Harry Kane"
+                },
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "18/12/2022",
+                    "ParticipatedCountries": {
+                        "ParticipatedCountry": [
+                            "Italy",
+                            "England"
+                        ],
+                        "results": {
+                            "result": {
+                                "Italy": 1,
+                                "England": 1
+                            },
+                            "tiebreaker": {
+                                "Italy": 3,
+                                "England": 2
+                            }
+                        }
+                    },
+                    "ManoftheMatch": "Leonardo Bonucci"
+                }
+            ]
+        };
+
+        const table = document.querySelector("table");
+
+        for (let i = 0; i < jsonData.Match.length; i++) {
+            const match = jsonData.Match[i];
+            const row = table.insertRow(-1);
+            const matchTypeCell = row.insertCell(0);
+            const dateCell = row.insertCell(1);
+            const resultCell = row.insertCell(2);
+            const manOfTheMatchCell = row.insertCell(3);
+
+            matchTypeCell.innerHTML = match.MatchType;
+            dateCell.innerHTML = match.Date;
+
+            const resultKeys = Object.keys(match.ParticipatedCountries.results.result);
+            const resultString = resultKeys.map(country => `${country} ${match.ParticipatedCountries.results.result[country]}`).join(" - ");
+
+            if (match.ParticipatedCountries.results.tiebreaker) {
+                const tiebreakerKeys = Object.keys(match.ParticipatedCountries.results.tiebreaker);
+                const tiebreakerString = tiebreakerKeys.map(country => `${country} ${match.ParticipatedCountries.results.tiebreaker[country]}`).join(" - ");
+                resultCell.innerHTML = resultString + " (" + tiebreakerString + ")";
+            } else {
+                resultCell.innerHTML = resultString;
+            }
+
+            manOfTheMatchCell.innerHTML = match.ManoftheMatch;
+        }
+
+    </script>
+</body>
+
+</html>

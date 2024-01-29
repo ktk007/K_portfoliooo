@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Division Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .normal-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fcfcfc;
+            /* White color for the top 50% */
+        }
+
+        .colored-content {
+            flex: 1.5;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-half {
+            flex: 1;
+            padding: 20px;
+            background-color: #108383;
+            /* Orange color for the left half */
+        }
+
+        .right-half {
+            flex: 1;
+            padding: 20px;
+            background-color: #5bafd6;
+            /* Green color for the right half */
+        }
+
+        .bordered-paragraph {
+            border: 2px solid #7cda46;
+            padding: 50px;
+            padding-right: 70px;
+            margin: 100px;
+            background-color: #7cda46;
+            border-radius: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="normal-content">
+            <h1 style="Color:#108383">Join our community</h1><br>
+            <h2 style="Color:rgb(44, 231, 44)">30-day, hassle free money back guarantee</h3>
+                <h3 style="Color:gray">Gain access to our full library of tutorials along with expert code
+                    reviews.<br>Perfect for any developers who are serious about honing their skils
+            </h2>
+        </div>
+        <div class="colored-content">
+            <div class="left-half">
+                <h3 style="Color:white">Monthly Subscription</h3>
+                <h1 style="Color:white">$29
+                    <h3 style="Color:rgb(148, 143, 143)">per month</h3>
+                </h1><br>
+                <h2 style="Color:white">Full access for $1 a day</h2>
+                <center>
+                    <h2 class="bordered-paragraph" style="Color:white">Sign Up</h2>
+                </center>
+            </div>
+            <div class="right-half">
+                <h1 style="Color:white"><b>Why Us</b></h1><br>
+                <h2 style="Color:white">Tutorials by industry experts<br><br>Peer & expert code review<br><br>Coding
+                    exercises<br><br>Community Forum<br><br>Flashcard decks<br><br>New videos every week</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

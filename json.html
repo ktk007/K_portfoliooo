@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" cellpadding="10px">
+        <tr>
+            <th>Match Type</th>
+            <th>Date</th>
+            <th>Participated Countries</th>
+            <th>Man of the Match</th>
+        </tr>
+        <script>
+            var matches = [
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "06/07/2021",
+                    "ParticipatedCountries": "Italy 1-1 Spain (4-2)",
+                    "ManoftheMatch": "Federico Chiesa"
+                },
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "07/07/2021",
+                    "ParticipatedCountries": "England 2-1 Denmark",
+                    "ManoftheMatch": "Harry Kane"
+                },
+                {
+                    "MatchType": "SemiFinal",
+                    "Date": "18/12/2022",
+                    "ParticipatedCountries": "Italy 1-1 England(3-2)",
+                    "ManoftheMatch": "Leonardo Bonucci"
+                }
+            ];
+
+            for (var i = 0; i < matches.length; i++) {
+                var match = matches[i];
+                document.write("<tr>");
+                document.write("<td>" + match.MatchType + "</td>");
+                document.write("<td>" + match.Date + "</td>");
+                document.write("<td>" + match.ParticipatedCountries + "</td>");
+                document.write("<td>" + match.ManoftheMatch + "</td>");
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>

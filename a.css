@@ -1,0 +1,28 @@
+.my-text-format {
+    color: rgb(255, 255, 255);
+    /* Change text color to blue */
+    background-color: rgb(0, 0, 0);
+    /* Change text background color to yellow */
+}
+
+.red-link:hover {
+    color: red;
+    /* Change the link text color to red on hover */
+}
+
+.green-first-letter::first-letter {
+    color: green;
+    font-size: x-large;
+}
+
+
+img.my-image {
+    width: 300px;
+    height: auto;
+    float: left;
+    margin: 10px 20px 10px 0;
+    border: 5px solid #000000;
+    padding: 10px;
+    background-color: #f1b3b3;
+    cursor: pointer;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #capital {
+            color: blue;
+            /* Change the color to your preference */
+            font-weight: bold;
+            font-size: 18px;
+            /* Change the font size to your preference */
+
+        }
+    </style>
+</head>
+
+<body style="background-color: powderblue;">
+    <h1>Country Capitals</h1>
+    <label for="countrySelect">Select a country:</label>
+    <select id="countrySelect">
+        <option value="">Select a country</option>
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <option value="uk">United Kingdom</option>
+        <option value="france">France</option>
+        <option value="germany">Germany</option>
+    </select>
+
+    <p>Capital: <span id="capital"></span></p>
+
+    <script>
+        var x = 5;
+        console.log(x);
+        //alert  
+        //alert("hi! this is an alert!");
+        //prompt
+        let name = prompt("How old are you?", "enter your age");
+        console.log(name);
+        const countrySelect = document.getElementById("countrySelect");
+        const capitalDisplay = document.getElementById("capital");
+
+        countrySelect.addEventListener("change", function () {
+            const selectedCountry = countrySelect.value;
+            let capital = "";
+
+            switch (selectedCountry) {
+                case "usa":
+                    capital = "Washington, D.C.";
+                    capitalDisplay.style.color = "blue";
+                    break;
+                case "canada":
+                    capital = "Ottawa";
+                    capitalDisplay.style.color = "green";
+                    break;
+                case "uk":
+                    capital = "London";
+                    capitalDisplay.style.color = "red";
+                    break;
+                case "france":
+                    capital = "Paris";
+                    capitalDisplay.style.color = "orange";
+                    break;
+                case "germany":
+                    capital = "Berlin";
+                    capitalDisplay.style.color = "purple";
+                    break;
+                default:
+                    capital = "";
+                    capitalDisplay.style.color = "black"; // Reset color
+            }
+
+            capitalDisplay.textContent = capital;
+        });
+    </script>
+</body>
+
+</html>
